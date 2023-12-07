@@ -115,7 +115,7 @@ def test_get_credit_by_id_success(mock_verify, mock_get_id_credit):
 @patch("data.models.credit_model.CreditModel.get_id_credit", return_value=None)
 def test_get_credit_by_id_not_found(mock_verify, mock_get_id_credit):
     token = get_mocked_token()
-    test_id = "nonexistent_id"
+    test_id = "nonexistent_id"  # Use an invalid or non existent id
     response = client.get(f"/credits/{test_id}", headers={"Authorization": f"Bearer {token}"})
     assert response.status_code == status.HTTP_404_NOT_FOUND
     assert response.json()["detail"] == "Credit ID not found"
@@ -188,7 +188,7 @@ def test_update_credit_success(mock_verify, mock_update_credit):
 @patch("data.models.credit_model.CreditModel.update_credit_data", return_value=False)
 def test_update_credit_failure(mock_verify, mock_update_credit):
     token = get_mocked_token()
-    test_id = "nonexistent_id"
+    test_id = "nonexistent_id"  # Use an invalid or non existent id
     update_data = {
         "company_name": "KPMG",
     }
@@ -211,7 +211,7 @@ def test_delete_credit_success(mock_verify, mock_delete_credit):
 @patch("data.models.credit_model.CreditModel.delete_credit_by_id", return_value=False)
 def test_delete_credit_failure(mock_verify, mock_delete_credit):
     token = get_mocked_token()
-    test_id = "nonexistent_id"
+    test_id = "nonexistent_id"  # Use an invalid or non existent id
     response = client.delete(f"/credits/{test_id}", headers={"Authorization": f"Bearer {token}"})
     assert response.status_code == status.HTTP_404_NOT_FOUND
     assert response.json()["detail"] == "Credit ID not found for deletion"

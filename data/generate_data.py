@@ -2,7 +2,6 @@ import json
 import random
 from faker import Faker
 
-# Initialize Faker to generate fake data
 fake = Faker()
 
 

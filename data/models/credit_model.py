@@ -1,5 +1,4 @@
-from mongoengine import Document, StringField, IntField, FloatField, URLField, EmailField, DateField, connect
-import json
+from mongoengine import Document, StringField, IntField, FloatField, URLField, EmailField, DateField
 
 
 class Credit(Document):
@@ -25,11 +24,11 @@ class CreditModel:
         credits = Credit.objects.all()
         credit_dicts = []
         for credit in credits:
-            credit_dict = credit.to_mongo().to_dict()
+            credit_dict = (
+                credit.to_mongo().to_dict()
+            )  # Converting to dict, experiment shows pydantic and mongo having different handling of data types.
             # Remove the '_id' field
-            credit_dict.pop("_id", None)
-            # If there are other fields to remove, do similarly
-            # credit_dict.pop('other_field', None)
+            credit_dict.pop("_id", None)  # If there are other fields to remove, do similarly
             credit_dicts.append(credit_dict)
         return credit_dicts
 
@@ -38,10 +37,7 @@ class CreditModel:
         credit = Credit.objects(CIN=id).first()
         if credit:
             credit_dict = credit.to_mongo().to_dict()
-            # Remove the '_id' field
             credit_dict.pop("_id", None)
-            # If there are other fields to remove, do similarly
-            # credit_dict.pop('other_field', None)
             return credit_dict
         return None
 

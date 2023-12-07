@@ -75,8 +75,15 @@
 
 - `requirements.txt` : Requirements file for the python environment.
 
+### 7. Code Considerations
+
+- `Incoming, Outgoing Data Validation` : Data validation checks using pydantic and mongoengine for incoming request data and outgoing data to db.
+- `Rate Limiter on Endpoint Level` : Rate Limiter added on each endpoint with different config to simulate real world behaviour.
+- `Integration of Global Exception Handler` : Global Internal Server Error for Server to recover out of any error.
+
 ### 6. Future Extensions
 
 - **Rate Limiter**: Rate Limiter in production are different than the one we just used, we are using in-memory storage rate limiter but for a production setup we should use more persistent storage like Redis or instead of doing rate limiting on endpoint level, we can use API Gateway's integrated limiting. This is a design choice.
 - **Authentication and Authorization** : Multiple users can be created with different access to endpoints. For production setup we will more robust authentication and authorization setup.
 - **Caching**: Currently we aren't caching any API Response, once we figure out eviction policy, caching strategy and hit-miss ratio, we can have a very high response system with less load over our dbs.
+- **Logging**: Custom logging can be added on top of logging package to properly show and save logs of a run for error tracing and RCA.

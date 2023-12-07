@@ -1,5 +1,5 @@
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
-# Create a limiter instance
+# Rate Limiter Instance using inbuilt method of limiting on remote address
 limiter = Limiter(key_func=get_remote_address)

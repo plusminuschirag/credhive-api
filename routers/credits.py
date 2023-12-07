@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Request, Path, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from .authentication.authenticate import verify_token
 from data.validators.credit_data import CreditData, PutCreditData
 from data.models.credit_model import CreditModel

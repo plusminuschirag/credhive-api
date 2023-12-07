@@ -20,6 +20,7 @@ class CreditData(BaseModel):
     loan_interest_percentage: float
     account_status: str
 
+    # Custom validators on top of incoming data.
     @validator("CIN")
     def cin_must_be_alphanumeric(cls, value):
         if not re.match(r"^[0-9a-zA-Z]*$", value):

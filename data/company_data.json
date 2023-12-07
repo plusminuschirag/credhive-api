@@ -1,0 +1,50 @@
+[
+    {
+        "CIN": "375",
+        "company_name": "KMT",
+        "address": "PSC 9272, Box 0102\nAPO AE 04350",
+        "registration_date": "2021-09-21",
+        "number_of_employees": 525,
+        "raised_capital": 2258687,
+        "turnover": 28122016,
+        "net_profit": 6759702,
+        "contact_number": "526.729.1296x803",
+        "contact_email": "jodi93@hill.com",
+        "company_website": "http://www.thomas.com/",
+        "loan_amount": 3500750,
+        "loan_interest_percentage": 6.98,
+        "account_status": "Inactive"
+    },
+    {
+        "CIN": "502",
+        "company_name": "Saunders Group",
+        "address": "24247 Mary Center\nConnerton, DE 13500",
+        "registration_date": "2018-07-10",
+        "number_of_employees": 966,
+        "raised_capital": 595366,
+        "turnover": 46732561,
+        "net_profit": 5383763,
+        "contact_number": "(252)997-4860x895",
+        "contact_email": "amberlewis@mann-deleon.org",
+        "company_website": "http://www.rogers.com/",
+        "loan_amount": 2620355,
+        "loan_interest_percentage": 7.35,
+        "account_status": "Active"
+    },
+    {
+        "CIN": "633",
+        "company_name": "Chaney LLC",
+        "address": "35520 Mays Greens Apt. 951\nSouth Russellbury, WI 60387",
+        "registration_date": "2021-04-11",
+        "number_of_employees": 31,
+        "raised_capital": 7756909,
+        "turnover": 24783401,
+        "net_profit": 9692941,
+        "contact_number": "482.408.7561x453",
+        "contact_email": "njohnson@stephens-smith.com",
+        "company_website": "https://montoya.com/",
+        "loan_amount": 314237,
+        "loan_interest_percentage": 9.81,
+        "account_status": "Pending"
+    }
+]
